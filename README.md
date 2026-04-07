@@ -1,2 +1,44 @@
-# provider-fraud-risk-scoring
-Machine learning system for scoring fraud risk of Medicare healthcare providers using utilization data and exclusion labels. The project includes data preprocessing, feature engineering, imbalanced learning models, explainability, and Dockerized deployment.
+# Provider Fraud Risk Scoring
+
+Machine learning system for scoring fraud risk of Medicare healthcare providers using utilization data and exclusion labels.
+
+## Project Overview
+
+This project builds a provider-level fraud-risk scoring pipeline using public Medicare summary data and exclusion-based labels.  
+The goal is not to prove legal fraud, but to assign a **risk score** that highlights providers whose billing and utilization patterns resemble known excluded providers.
+
+## Objectives
+
+- Clean and preprocess Medicare provider summary data
+- Integrate exclusion-based labels from the OIG exclusion dataset
+- Engineer fraud-relevant provider behavior features
+- Train and compare machine learning models for fraud-risk detection
+- Generate provider-level fraud risk scores
+- Prepare the project for reproducible execution using Docker
+
+## Dataset Sources
+
+- Medicare Physician & Other Practitioners by Provider
+- OIG exclusion dataset
+
+## Project Workflow
+
+1. Load raw datasets
+2. Clean and preprocess the Medicare data
+3. Build fraud proxy labels using provider NPI matching
+4. Engineer provider-level and specialty-aware features
+5. Create a model-ready dataset
+6. Train classification models:
+   - Logistic Regression
+   - Random Forest
+   - XGBoost
+7. Evaluate performance using fraud-appropriate metrics:
+   - Precision
+   - Recall
+   - ROC-AUC
+   - PR-AUC
+8. Produce provider-level fraud risk scores
+
+## Note
+Datasets are not included in the repository due to their size.
+Place the raw files in data/raw/ before running the pipeline.

@@ -1,0 +1,7 @@
+data/raw/*
+data/processed/*
+*.csv
+*.xlsx
+.venv/
+__pycache__/
+.vscode/
